@@ -29,7 +29,7 @@ namespace SnakeAndLadderGame
                 {
                     Console.WriteLine("option is No play");
                     position = position + 0;
-                    Console.WriteLine("position: " + position);
+                    Console.WriteLine("position : " + position);
                 }
                 else if (option == 1)
                 {
@@ -39,13 +39,24 @@ namespace SnakeAndLadderGame
                     {
                         position = 0;
                     }
-                    Console.WriteLine("position: " + position);
+                    Console.WriteLine("position : " + position);
                 }
                 else
                 {
                     Console.WriteLine("option is ladder");
                     position = position + dice;
-                    Console.WriteLine("position: " + position);
+                    
+                    if (position > 100)
+                    {
+                        position = position - dice;
+                        
+                    }
+                    else if (position == 100)
+                    {
+                        Console.WriteLine("player won");
+                    }
+                    Console.WriteLine("position : " + position);
+
                 }
             }
         }
